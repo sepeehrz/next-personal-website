@@ -1,0 +1,45 @@
+{
+  "Header": {
+    "availability": "Available for select projects",
+    "githubLabel": "Visit Alex Morgan on GitHub",
+    "homeLabel": "Alex Morgan, home",
+    "language": {
+      "action": "فارسی",
+      "label": "Change language to Persian"
+    },
+    "linkedinLabel": "Visit Alex Morgan on LinkedIn",
+    "name": "Alex Morgan",
+    "navigationLabel": "Primary navigation",
+    "theme": {
+      "darkLabel": "Enable dark mode",
+      "lightLabel": "Enable light mode"
+    }
+  },
+  "Hero": {
+    "description": "Full-stack engineer focused on creating fast, thoughtful, and accessible web experiences—from the first idea to production.",
+    "eyebrow": "Software engineer · Product builder",
+    "location": "Based in Toronto · Working worldwide",
+    "primaryAction": "Let's work together",
+    "secondaryAction": "Explore my work",
+    "skipLink": "Skip to main content",
+    "stats": {
+      "experience": {"label": "years building", "value": "5+"},
+      "label": "Career highlights",
+      "projects": {"label": "projects shipped", "value": "24"},
+      "score": {"label": "lighthouse score", "value": "99%"}
+    },
+    "title": "I build digital products that feel",
+    "titleAccent": " effortless.",
+    "project": {
+      "codeLabel": "Code sample",
+      "conversation": "Start a conversation",
+      "emailLabel": "Email Alex Morgan",
+      "label": "Featured project preview",
+      "projects": "View projects",
+      "projectsLinkLabel": "See projects on GitHub",
+      "shipping": "Shipping great software",
+      "stack": "Preferred stack",
+      "status": "Current status"
+    }
+  }
+}
