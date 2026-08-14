@@ -15,6 +15,29 @@
       "lightLabel": "Enable light mode"
     }
   },
+  "AboutMe": {
+    "contact": {
+      "callAction": "Call me",
+      "emailAction": "Send an email",
+      "emailLabel": "Email",
+      "mobileLabel": "Mobile"
+    },
+    "description": "I have been working professionally in programming for over five years, helping companies implement, develop and maintain their products. My main focus is Vue.js and Nuxt.js, with strong practical experience across their ecosystems. I am eager to bring that experience to a new team, contribute to the company’s progress and build meaningful work together.",
+    "details": {
+      "birthday": {"label": "Birthday", "value": "14 Feb 1992"},
+      "degree": {"label": "Degree", "value": "Bachelor's"},
+      "experience": {"label": "Experience", "value": "5+ Years"}
+    },
+    "eyebrow": "About me",
+    "availability": "Open to meaningful opportunities",
+    "availabilityDescription": "Available for teams and projects where thoughtful engineering can make a difference.",
+    "highlightLabel": "Professional experience",
+    "name": "Sepehr Zarghami",
+    "role": "Vue.js & Nuxt.js Developer",
+    "specialization": "Core toolkit",
+    "title": "Building reliable web experiences.",
+    "contactLabel": "Get in touch"
+  },
   "Hero": {
     "description": "Full-stack engineer focused on creating fast, thoughtful, and accessible web experiences—from the first idea to production.",
     "eyebrow": "Software engineer · Product builder",
