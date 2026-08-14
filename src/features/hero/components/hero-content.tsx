@@ -10,41 +10,62 @@ export async function HeroContent() {
   ];
 
   return (
-    <div className='hero-copy' id='hero-content'>
-      <div className='eyebrow'>
-        <span aria-hidden='true' className='eyebrow-icon'>
-          <Braces />
+    <div
+      className='relative z-2 max-[850px]:max-w-152 motion-safe:animate-[fade-in_650ms_cubic-bezier(0.16,1,0.3,1)_both]'
+      id='hero-content'>
+      <div className='mb-7 inline-flex items-center gap-2.5 text-[0.73rem] font-bold text-slate-600 max-[580px]:mb-[1.4rem] max-[580px]:text-[0.65rem] dark:text-slate-300'>
+        <span
+          aria-hidden='true'
+          className='grid size-8 place-items-center rounded-full border border-indigo-400/40 bg-indigo-500/10 text-indigo-400'>
+          <Braces aria-hidden='true' className='size-[0.95rem] stroke-[1.8]' />
         </span>
         {t('eyebrow')}
       </div>
 
-      <h1 id='hero-heading'>
+      <h1
+        className='m-0 max-w-[13ch] text-[clamp(3rem,5.8vw,5.45rem)] font-semibold leading-[1.18] tracking-[-0.04em] max-[850px]:max-w-[11ch] max-[580px]:text-[clamp(2.75rem,14vw,4rem)]'
+        id='hero-heading'>
         {t('title')}
-        <span>{t('titleAccent')}</span>
+        <span className='bg-linear-[105deg,#86a0ff_10%,#597cf5_52%,#61ddb1_105%] bg-clip-text text-transparent'>
+          {t('titleAccent')}
+        </span>
       </h1>
 
-      <p className='hero-description'>{t('description')}</p>
+      <p className='mt-7 max-w-148 text-[clamp(1.05rem,1.5vw,1.2rem)] leading-[1.7] text-slate-600 max-[580px]:mt-[1.4rem] max-[580px]:text-base dark:text-slate-400'>
+        {t('description')}
+      </p>
 
-      <div className='hero-actions'>
-        <a className='button button-primary' href='mailto:hello@alexmorgan.dev'>
+      <div className='mt-9 flex flex-wrap gap-3 max-[580px]:mt-7 max-[580px]:grid max-[580px]:grid-cols-1'>
+        <a
+          className='inline-flex min-h-13 items-center justify-center gap-2.5 rounded-xl border border-transparent bg-indigo-600 px-5 py-3 text-[0.9rem] font-bold text-white shadow-[0_0.75rem_2.5rem_rgb(66_101_239_/_22%)] transition hover:-translate-y-0.5 hover:bg-indigo-500 hover:shadow-[0_0.9rem_3rem_rgb(66_101_239_/_32%)] focus-visible:outline-3 focus-visible:outline-offset-4 focus-visible:outline-indigo-300 active:scale-[0.98]'
+          href='mailto:hello@alexmorgan.dev'>
           {t('primaryAction')}
-          <ArrowUpLeft aria-hidden='true' />
+          <ArrowUpLeft aria-hidden='true' className='size-[1.15rem] stroke-[1.8]' />
         </a>
-        <a className='button button-secondary' href='#selected-work'>
+        <a
+          className='inline-flex min-h-13 items-center justify-center rounded-xl border border-slate-900/20 bg-white/72 px-5 py-3 text-[0.9rem] font-bold text-slate-700 transition hover:border-slate-900/27 hover:bg-slate-900/7 hover:text-slate-950 focus-visible:outline-3 focus-visible:outline-offset-4 focus-visible:outline-indigo-300 dark:border-white/17 dark:bg-white/3 dark:text-slate-200 dark:hover:border-white/27 dark:hover:bg-white/7 dark:hover:text-white'
+          href='#selected-work'>
           {t('secondaryAction')}
         </a>
       </div>
 
-      <div className='location'>
-        <MapPin aria-hidden='true' />
+      <div className='mt-[1.4rem] flex items-center gap-2 text-[0.8rem] text-slate-500 max-[580px]:items-start max-[580px]:leading-[1.5] dark:text-slate-500'>
+        <MapPin
+          aria-hidden='true'
+          className='mt-[0.2rem] size-[0.9rem] shrink-0 stroke-[1.8] min-[581px]:mt-0'
+        />
         {t('location')}
       </div>
 
-      <dl aria-label={t('stats.label')} className='stats'>
+      <dl className='mt-[clamp(3rem,7vh,5rem)] flex gap-[clamp(1.5rem,4vw,3.25rem)] max-[850px]:mt-14 max-[580px]:mt-12 max-[580px]:grid max-[580px]:grid-cols-3 max-[580px]:gap-3' aria-label={t('stats.label')}>
         {stats.map(stat => (
-          <div className='stat' key={stat.label}>
-            <dt>{stat.label}</dt>
-            <dd>{stat.value}</dd>
+          <div className='flex flex-col-reverse gap-[0.35rem]' key={stat.label}>
+            <dt className='text-[0.72rem] text-slate-500 max-[580px]:text-[0.58rem] max-[580px]:leading-[1.4] dark:text-slate-500'>
+              {stat.label}
+            </dt>
+            <dd className='m-0 text-[1.4rem] font-semibold tabular-nums text-slate-800 max-[580px]:text-[1.2rem] dark:text-slate-200'>
+              {stat.value}
+            </dd>
           </div>
         ))}
       </dl>
