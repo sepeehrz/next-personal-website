@@ -38,6 +38,146 @@
     "title": "Building reliable web experiences.",
     "contactLabel": "Get in touch"
   },
+  "Career": {
+    "description": "A focused path through academic foundations and hands-on frontend experience across fintech, media, e-commerce and client work.",
+    "educationEyebrow": "Academic foundation",
+    "educationTitle": "Education",
+    "education": {
+      "associate": {
+        "degree": "Associate of Software",
+        "institution": "Islamic Azad University",
+        "period": "2013 – 2015",
+        "description": "The Islamic Azad University is a private university system headquartered in Tehran, Iran, and one of the largest comprehensive university systems in the world. It also has international branches in Afghanistan, the UAE, Lebanon and the United Kingdom."
+      },
+      "bachelor": {
+        "degree": "Bachelor of Network Engineering",
+        "institution": "University of Applied Sciences",
+        "period": "2015 – 2017",
+        "description": "The University of Applied Science and Technology is a public university system administered by Iran's Ministry of Science, Research and Technology. It develops the professional and technical skills of employed personnel and graduates across economic sectors."
+      }
+    },
+    "experienceEyebrow": "Career path",
+    "experienceTitle": "Work experience",
+    "experience": {
+      "cashineh": {
+        "company": "Cashineh",
+        "description": "An e-commerce cashback platform where users shop from their favorite stores and receive part of their confirmed purchase amount back in their Cashineh account.",
+        "period": "Jul 2018 – Aug 2019",
+        "role": "Frontend Developer"
+      },
+      "freelancer": {
+        "company": "Freelancer / Self-employed",
+        "description": "Started taking freelance projects through online platforms while building the practical foundations of programming and frontend development.",
+        "period": "Feb 2017 – Jun 2018",
+        "role": "Frontend Developer"
+      },
+      "gapfilm": {
+        "company": "Gapfilm",
+        "description": "A major library of current and classic movies and series, delivered with subtitles and exclusive Gapfilm dubbing.",
+        "period": "May 2021 – Apr 2023",
+        "role": "Frontend Developer"
+      },
+      "lendroll": {
+        "company": "Lendroll",
+        "description": "A financial-health company that gives employees immediate access to earned salaries and provides short-term micro-facilities and long-term financial services.",
+        "period": "Apr 2023 – Present",
+        "role": "Frontend Developer"
+      },
+      "vrwebdesign": {
+        "company": "Vrwebdesign",
+        "description": "A programming and software team delivering personal and organizational projects across a range of technologies.",
+        "period": "Aug 2019 – Jul 2021",
+        "role": "Frontend Developer"
+      }
+    },
+    "eyebrow": "Education & experience",
+    "title": "Learning in depth. Building in practice."
+  },
+  "ContactMe": {
+    "description": "Have a role, project or idea in mind? Share a few details and I will be glad to continue the conversation.",
+    "directEmailLabel": "Prefer email directly?",
+    "eyebrow": "Contact me",
+    "title": "Let’s build something meaningful.",
+    "form": {
+      "description": "Your email app will open with this message prepared for sending.",
+      "emailBody": {
+        "email": "Email",
+        "name": "Name"
+      },
+      "fields": {
+        "email": {
+          "label": "Email address",
+          "placeholder": "you@example.com"
+        },
+        "message": {
+          "label": "Your message",
+          "placeholder": "Tell me a little about your project or opportunity."
+        },
+        "name": {
+          "label": "Your name",
+          "placeholder": "Jane Doe"
+        }
+      },
+      "helper": "All fields are required. Your details stay in your email client.",
+      "subject": "New message from portfolio",
+      "submit": "Prepare email",
+      "submitting": "Preparing email…",
+      "success": "Your email app is opening with the message ready to send.",
+      "title": "Send a message",
+      "validation": {
+        "email": "Enter a valid email address.",
+        "message": "Your message must contain at least 10 characters.",
+        "name": "Enter at least 2 characters for your name."
+      }
+    }
+  },
+  "Portfolio": {
+    "description": "A selection of the products and platforms where I have contributed as a frontend developer.",
+    "detailHint": "Each card links to a dedicated case-study page that can be expanded next.",
+    "eyebrow": "Selected work",
+    "projectAriaLabel": "View details for {project}",
+    "title": "Projects shaped by real-world needs.",
+    "viewCaseStudy": "View details",
+    "projects": {
+      "cashineh": {
+        "category": "E-commerce",
+        "summary": "A cashback platform that makes shopping from favorite stores more rewarding.",
+        "title": "Cashineh"
+      },
+      "freelance": {
+        "category": "Independent work",
+        "summary": "A collection of tailored personal and business projects delivered across different technologies.",
+        "title": "Freelance projects"
+      },
+      "gapfilm": {
+        "category": "Media & entertainment",
+        "summary": "A movie and series platform with a rich content archive, subtitles and exclusive dubbing.",
+        "title": "Gapfilm"
+      },
+      "lendroll": {
+        "category": "Financial health",
+        "summary": "A financial wellness platform that gives employees access to earned salary when they need it.",
+        "title": "Lendroll"
+      },
+      "vrwebdesign": {
+        "category": "Digital products",
+        "summary": "Personal and organizational web projects built for a range of business needs.",
+        "title": "Vrwebdesign"
+      }
+    }
+  },
+  "Skills": {
+    "eyebrow": "Technical toolkit",
+    "title": "Tools I use to turn ideas into products.",
+    "description": "A practical toolkit built through frontend development, product delivery and continuous learning.",
+    "groups": {
+      "frontend": "Frontend foundations",
+      "uiTooling": "UI & tooling",
+      "stateQuality": "State, build & quality",
+      "workflow": "Workflow & delivery",
+      "platformBackend": "Platform & backend"
+    }
+  },
   "Hero": {
     "description": "Full-stack engineer focused on creating fast, thoughtful, and accessible web experiences—from the first idea to production.",
     "eyebrow": "Software engineer · Product builder",
