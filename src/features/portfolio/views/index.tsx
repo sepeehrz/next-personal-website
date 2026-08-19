@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import {projects} from '../data/projects';
 import {getTranslations} from 'next-intl/server';
 import {
   Rocket,
@@ -9,13 +10,13 @@ import {
   Clapperboard
 } from 'lucide-react';
 
-const projects = [
-  {icon: WalletCards, slug: 'lendroll', tone: 'emerald'},
-  {icon: Clapperboard, slug: 'gapfilm', tone: 'violet'},
-  {icon: ShoppingBag, slug: 'cashineh', tone: 'amber'},
-  {icon: Building2, slug: 'vrwebdesign', tone: 'sky'},
-  {icon: Rocket, slug: 'freelance', tone: 'rose'}
-] as const;
+const projectIcons = {
+  cashineh: ShoppingBag,
+  freelance: Rocket,
+  gapfilm: Clapperboard,
+  lendroll: WalletCards,
+  vrwebdesign: Building2
+} as const;
 
 const toneStyles = {
   amber: 'from-amber-500/24 via-orange-500/12 to-transparent text-amber-700 dark:text-amber-300',
@@ -61,7 +62,10 @@ export default async function PortfolioView() {
         </div>
 
         <div className='mt-12 grid gap-4 md:grid-cols-2 xl:grid-cols-3'>
-          {projects.map(({icon: Icon, slug, tone}, index) => (
+          {projects.map(({slug, tone}, index) => {
+            const Icon = projectIcons[slug];
+
+            return (
             <Link
               aria-label={t('projectAriaLabel', {project: t(`projects.${slug}.title`)})}
               className={`group relative min-h-84 overflow-hidden rounded-3xl border border-slate-900/13 bg-white p-6 shadow-[0_0.75rem_2rem_rgb(15_23_42_/_7%)] transition duration-200 hover:-translate-y-1 hover:border-slate-900/20 hover:shadow-[0_1.5rem_4rem_rgb(15_23_42_/_12%)] focus-visible:outline-3 focus-visible:outline-offset-4 focus-visible:outline-indigo-300 dark:border-white/10 dark:bg-white/4 dark:hover:border-white/20 dark:hover:bg-white/7 dark:hover:shadow-[0_1.5rem_4rem_rgb(0_0_0_/_24%)] ${
@@ -101,7 +105,8 @@ export default async function PortfolioView() {
                 </div>
               </div>
             </Link>
-          ))}
+            );
+          })}
         </div>
       </div>
     </section>

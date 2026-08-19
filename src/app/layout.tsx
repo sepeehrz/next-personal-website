@@ -4,6 +4,7 @@ import Providers from '@/providers';
 import {vazirmatn} from '@/lib/fonts';
 import {getLocale, getMessages} from 'next-intl/server';
 import {HeaderComponent} from '@/components/header/site-header';
+import {FooterComponent} from '@/components/footer/site-footer';
 
 export const metadata: Metadata = {
   description:
@@ -26,6 +27,7 @@ export default async function RootLayout({
             <HeaderComponent />
             {children}
           </main>
+          <FooterComponent />
         </Providers>
       </body>
     </html>
