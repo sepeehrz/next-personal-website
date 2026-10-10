@@ -2,7 +2,7 @@
 
 import {useTranslations} from 'next-intl';
 import {ThemeToggle} from './theme-toggle';
-import {Github, Linkedin} from 'lucide-react';
+// import {Github, Linkedin} from 'lucide-react';
 import {LanguageSwitcher} from './language-switcher';
 
 export function HeaderComponent() {
@@ -39,10 +39,10 @@ export function HeaderComponent() {
             href='https://github.com/'
             rel='noreferrer'
             target='_blank'>
-            <Github
+            {/* <Github
               aria-hidden='true'
               className='size-[1.15rem] stroke-[1.8]'
-            />
+            /> */}
           </a>
           <a
             aria-label={t('linkedinLabel')}
@@ -50,10 +50,10 @@ export function HeaderComponent() {
             href='https://www.linkedin.com/'
             rel='noreferrer'
             target='_blank'>
-            <Linkedin
+            {/* <Linkedin
               aria-hidden='true'
               className='size-[1.15rem] stroke-[1.8]'
-            />
+            /> */}
           </a>
           <LanguageSwitcher />
           <ThemeToggle />

@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import {getTranslations} from 'next-intl/server';
-import {Mail, Github, Linkedin, Sparkles, ArrowUpRight} from 'lucide-react';
+import {Mail, Sparkles, ArrowUpRight} from 'lucide-react';
 
 export async function FooterComponent() {
   const t = await getTranslations('Footer');
@@ -62,7 +62,7 @@ export async function FooterComponent() {
                   href='https://github.com/'
                   rel='noreferrer'
                   target='_blank'>
-                  <Github aria-hidden='true' className='size-[1.15rem]' />
+                  {/* <Github aria-hidden='true' className='size-[1.15rem]' /> */}
                 </a>
                 <a
                   aria-label={t('linkedinLabel')}
@@ -70,7 +70,7 @@ export async function FooterComponent() {
                   href='https://www.linkedin.com/'
                   rel='noreferrer'
                   target='_blank'>
-                  <Linkedin aria-hidden='true' className='size-[1.15rem]' />
+                  {/* <Linkedin aria-hidden='true' className='size-[1.15rem]' /> */}
                 </a>
                 <a
                   aria-label={t('emailLabel')}
