@@ -1,9 +1,10 @@
 'use client';
 
 import {useTranslations} from 'next-intl';
-import {ThemeToggle} from './theme-toggle';
-// import {Github, Linkedin} from 'lucide-react';
+import {FaGithub, FaLinkedinIn} from 'react-icons/fa6';
+
 import {LanguageSwitcher} from './language-switcher';
+import {ThemeToggle} from './theme-toggle';
 
 export function HeaderComponent() {
   const t = useTranslations('Header');
@@ -20,40 +21,27 @@ export function HeaderComponent() {
           <span
             aria-hidden='true'
             className='grid size-8 place-items-center rounded-[0.6rem] border border-indigo-400/50 bg-indigo-500/12 text-[0.65rem] font-extrabold tracking-wider text-indigo-300'>
-            AM
+            SZ
           </span>
           <span className='max-[580px]:hidden'>{t('name')}</span>
         </a>
 
         <div className='flex items-center gap-2'>
-          <span className='me-2 hidden items-center gap-2.5 text-[0.8rem] text-slate-600 min-[581px]:inline-flex dark:text-slate-400'>
-            <span
-              aria-hidden='true'
-              className='size-2 rounded-full bg-emerald-500 shadow-[0_0_0_0.25rem_rgb(16_185_129/10%)]'
-            />
-            {t('availability')}
-          </span>
           <a
             aria-label={t('githubLabel')}
             className='grid size-11 place-items-center rounded-xl border border-transparent text-slate-600 transition hover:border-slate-900/13 hover:bg-slate-900/4 hover:text-slate-900 focus-visible:outline-3 focus-visible:outline-offset-4 focus-visible:outline-indigo-300 dark:text-slate-400 dark:hover:border-white/10 dark:hover:bg-white/4 dark:hover:text-white'
-            href='https://github.com/'
+            href='https://github.com/sepeehrz'
             rel='noreferrer'
             target='_blank'>
-            {/* <Github
-              aria-hidden='true'
-              className='size-[1.15rem] stroke-[1.8]'
-            /> */}
+            <FaGithub aria-hidden='true' className='size-[1.15rem]' />
           </a>
           <a
             aria-label={t('linkedinLabel')}
             className='grid size-11 place-items-center rounded-xl border border-transparent text-slate-600 transition hover:border-slate-900/13 hover:bg-slate-900/4 hover:text-slate-900 focus-visible:outline-3 focus-visible:outline-offset-4 focus-visible:outline-indigo-300 dark:text-slate-400 dark:hover:border-white/10 dark:hover:bg-white/4 dark:hover:text-white'
-            href='https://www.linkedin.com/'
+            href='https://www.linkedin.com/in/sepehr-zarghami'
             rel='noreferrer'
             target='_blank'>
-            {/* <Linkedin
-              aria-hidden='true'
-              className='size-[1.15rem] stroke-[1.8]'
-            /> */}
+            <FaLinkedinIn aria-hidden='true' className='size-[1.1rem]' />
           </a>
           <LanguageSwitcher />
           <ThemeToggle />

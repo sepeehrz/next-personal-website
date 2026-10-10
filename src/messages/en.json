@@ -1,14 +1,14 @@
 {
   "Header": {
     "availability": "Available for select projects",
-    "githubLabel": "Visit Alex Morgan on GitHub",
-    "homeLabel": "Alex Morgan, home",
+    "githubLabel": "Visit Sepehr Zarghami on GitHub",
+    "homeLabel": "Sepehr Zarghami, home",
     "language": {
       "action": "فارسی",
       "label": "Change language to Persian"
     },
-    "linkedinLabel": "Visit Alex Morgan on LinkedIn",
-    "name": "Alex Morgan",
+    "linkedinLabel": "Visit Sepehr Zarghami on LinkedIn",
+    "name": "Sepehr Zarghami",
     "navigationLabel": "Primary navigation",
     "theme": {
       "darkLabel": "Enable dark mode",
@@ -269,7 +269,7 @@
     "project": {
       "codeLabel": "Code sample",
       "conversation": "Start a conversation",
-      "emailLabel": "Email Alex Morgan",
+      "emailLabel": "Email Sepehr Zarghami",
       "label": "Featured project preview",
       "projects": "View projects",
       "projectsLinkLabel": "See projects on GitHub",

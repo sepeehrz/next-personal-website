@@ -10,7 +10,14 @@ import {
   BriefcaseBusiness
 } from 'lucide-react';
 
-const technologies = ['Vue.js', 'Nuxt.js', 'TypeScript', 'JavaScript'];
+const technologies = [
+  'React.js',
+  'Next.js',
+  'Vue.js',
+  'Nuxt.js',
+  'TypeScript',
+  'JavaScript'
+];
 
 export default async function AboutMeView() {
   const t = await getTranslations('AboutMe');
@@ -85,11 +92,15 @@ export default async function AboutMeView() {
                 <span className='grid size-14 place-items-center rounded-2xl bg-linear-to-br from-indigo-500 to-violet-500 text-lg font-extrabold text-white shadow-lg shadow-indigo-500/30'>
                   SZ
                 </span>
-                <h3 className='mt-5 text-2xl font-bold tracking-[-0.03em]'>{t('name')}</h3>
+                <h3 className='mt-5 text-2xl font-bold tracking-[-0.03em]'>
+                  {t('name')}
+                </h3>
                 <p className='mt-1 text-sm text-slate-300'>{t('role')}</p>
               </div>
               <div className='rounded-2xl border border-white/10 bg-white/6 px-5 py-4 backdrop-blur-sm'>
-                <span className='block text-xs text-slate-400'>{t('highlightLabel')}</span>
+                <span className='block text-xs text-slate-400'>
+                  {t('highlightLabel')}
+                </span>
                 <strong className='mt-1 block text-3xl font-semibold tracking-[-0.04em] text-emerald-400'>
                   {t('details.experience.value')}
                 </strong>
@@ -107,7 +118,9 @@ export default async function AboutMeView() {
                 </span>
                 {label}
               </dt>
-              <dd className='mt-4 text-base font-semibold text-slate-800 dark:text-slate-100'>{value}</dd>
+              <dd className='mt-4 text-base font-semibold text-slate-800 dark:text-slate-100'>
+                {value}
+              </dd>
             </dl>
           ))}
 
@@ -116,35 +129,57 @@ export default async function AboutMeView() {
               <CheckCircle2 aria-hidden='true' className='size-5 stroke-[2]' />
               {t('availability')}
             </div>
-            <p className='mt-2 text-sm leading-6 text-slate-600 dark:text-slate-400'>{t('availabilityDescription')}</p>
+            <p className='mt-2 text-sm leading-6 text-slate-600 dark:text-slate-400'>
+              {t('availabilityDescription')}
+            </p>
           </article>
 
           <article className='rounded-2xl border border-slate-900/13 bg-white/75 p-5 shadow-[0_0.75rem_2rem_rgb(15_23_42_/_7%)] sm:col-span-2 dark:border-white/10 dark:bg-white/3'>
-            <h3 className='text-sm font-bold text-slate-800 dark:text-slate-100'>{t('contactLabel')}</h3>
+            <h3 className='text-sm font-bold text-slate-800 dark:text-slate-100'>
+              {t('contactLabel')}
+            </h3>
             <div className='mt-4 grid gap-3 sm:grid-cols-2'>
               <a
                 className='group flex min-h-14 items-center gap-3 rounded-xl bg-slate-900 px-4 text-white transition hover:bg-slate-800 focus-visible:outline-3 focus-visible:outline-offset-4 focus-visible:outline-indigo-300 active:scale-[0.98] dark:bg-white dark:text-slate-950 dark:hover:bg-slate-200'
                 href='mailto:sepeehrz@gmail.com'>
-                <Mail aria-hidden='true' className='size-5 shrink-0 stroke-[1.8]' />
+                <Mail
+                  aria-hidden='true'
+                  className='size-5 shrink-0 stroke-[1.8]'
+                />
                 <span className='min-w-0'>
-                  <span className='block text-xs opacity-65'>{t('contact.emailLabel')}</span>
-                  <span className='block truncate text-sm font-semibold' dir='ltr'>
+                  <span className='block text-xs opacity-65'>
+                    {t('contact.emailLabel')}
+                  </span>
+                  <span
+                    className='block truncate text-sm font-semibold'
+                    dir='ltr'>
                     sepeehrz@gmail.com
                   </span>
                 </span>
-                <ArrowUpLeft aria-hidden='true' className='ms-auto size-4 shrink-0 opacity-70' />
+                <ArrowUpLeft
+                  aria-hidden='true'
+                  className='ms-auto size-4 shrink-0 opacity-70'
+                />
               </a>
               <a
                 className='group flex min-h-14 items-center gap-3 rounded-xl border border-slate-900/13 bg-white px-4 text-slate-800 transition hover:border-indigo-500/45 hover:bg-indigo-500/5 focus-visible:outline-3 focus-visible:outline-offset-4 focus-visible:outline-indigo-300 active:scale-[0.98] dark:border-white/10 dark:bg-white/4 dark:text-slate-100 dark:hover:bg-indigo-500/10'
                 href='tel:+989373389140'>
-                <Phone aria-hidden='true' className='size-5 shrink-0 stroke-[1.8] text-indigo-700 dark:text-indigo-300' />
+                <Phone
+                  aria-hidden='true'
+                  className='size-5 shrink-0 stroke-[1.8] text-indigo-700 dark:text-indigo-300'
+                />
                 <span className='min-w-0'>
-                  <span className='block text-xs text-slate-500 dark:text-slate-400'>{t('contact.mobileLabel')}</span>
+                  <span className='block text-xs text-slate-500 dark:text-slate-400'>
+                    {t('contact.mobileLabel')}
+                  </span>
                   <span className='block text-sm font-semibold' dir='ltr'>
                     +98 937 338 9140
                   </span>
                 </span>
-                <ArrowUpLeft aria-hidden='true' className='ms-auto size-4 shrink-0 text-slate-400' />
+                <ArrowUpLeft
+                  aria-hidden='true'
+                  className='ms-auto size-4 shrink-0 text-slate-400'
+                />
               </a>
             </div>
           </article>

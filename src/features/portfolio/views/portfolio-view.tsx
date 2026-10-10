@@ -1,14 +1,15 @@
 import Link from 'next/link';
-import {projects} from '../data/projects';
 import {getTranslations} from 'next-intl/server';
 import {
-  Rocket,
-  Building2,
   ArrowUpLeft,
+  Building2,
+  Clapperboard,
+  Rocket,
   ShoppingBag,
-  WalletCards,
-  Clapperboard
+  WalletCards
 } from 'lucide-react';
+
+import {projects} from '@/features/portfolio/constants/project-catalog';
 
 const projectIcons = {
   cashineh: ShoppingBag,

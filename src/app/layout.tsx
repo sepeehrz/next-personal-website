@@ -3,13 +3,13 @@ import type {Metadata} from 'next';
 import Providers from '@/providers';
 import {vazirmatn} from '@/lib/fonts';
 import {getLocale, getMessages} from 'next-intl/server';
-import {HeaderComponent} from '@/components/header/site-header';
-import {FooterComponent} from '@/components/footer/site-footer';
+import {HeaderComponent} from '@/components/site-header';
+import {FooterComponent} from '@/components/site-footer';
 
 export const metadata: Metadata = {
   description:
     'A full-stack software engineer building fast, thoughtful and accessible digital products.',
-  title: 'Alex Morgan | Software Engineer'
+  title: 'Sepehr Zarghami | Software Engineer'
 };
 
 export default async function RootLayout({

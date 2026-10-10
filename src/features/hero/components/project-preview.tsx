@@ -139,7 +139,7 @@ export async function ProjectPreview() {
           <small className='text-[0.62rem] font-medium text-slate-500' dir='rtl'>
             {t('conversation')}
           </small>
-          <span dir='ltr'>hello@alexmorgan.dev</span>
+          <span dir='ltr'>sepeehrz@gmail.com</span>
         </span>
         <ArrowUpLeft aria-hidden='true' className='size-[0.95rem] stroke-[1.8] text-slate-500' />
       </a>

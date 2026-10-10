@@ -1,3 +1,5 @@
+import type {IPortfolioProject} from '@/features/portfolio/types/portfolio-project';
+
 export const projects = [
   {
     slug: 'lendroll',
@@ -59,6 +61,4 @@ export const projects = [
       {image: 'linear-gradient(135deg, #7f1d1d, #f43f5e)', label: 'mobile experience'}
     ]
   }
-] as const;
-
-export type Project = (typeof projects)[number];
+] as const satisfies readonly IPortfolioProject[];

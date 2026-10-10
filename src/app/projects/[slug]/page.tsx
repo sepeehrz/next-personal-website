@@ -1,11 +1,15 @@
 import Link from 'next/link';
 import {notFound} from 'next/navigation';
 import {getTranslations} from 'next-intl/server';
-import {projects} from '@/features/portfolio/data/projects';
+import {projects} from '@/features/portfolio/constants/project-catalog';
 import {Layers3, ArrowUpLeft, ExternalLink} from 'lucide-react';
 import ProjectGallery from '@/features/portfolio/components/project-gallery';
 
-export default async function ProjectDetailsPage({params}: {params: Promise<{slug: string}>}) {
+export default async function ProjectDetailsPage({
+  params
+}: {
+  params: Promise<{slug: string}>;
+}) {
   const {slug} = await params;
   const project = projects.find(item => item.slug === slug);
 
@@ -16,8 +20,14 @@ export default async function ProjectDetailsPage({params}: {params: Promise<{slu
 
   return (
     <section className='relative min-h-screen overflow-hidden bg-slate-50 py-20 text-slate-900 sm:py-28 dark:bg-slate-950 dark:text-slate-50'>
-      <div aria-hidden='true' className='pointer-events-none absolute -start-40 top-16 size-144 rounded-full bg-indigo-500/15 blur-3xl' />
-      <div aria-hidden='true' className='pointer-events-none absolute -end-40 bottom-0 size-144 rounded-full bg-emerald-500/10 blur-3xl' />
+      <div
+        aria-hidden='true'
+        className='pointer-events-none absolute -start-40 top-16 size-144 rounded-full bg-indigo-500/15 blur-3xl'
+      />
+      <div
+        aria-hidden='true'
+        className='pointer-events-none absolute -end-40 bottom-0 size-144 rounded-full bg-emerald-500/10 blur-3xl'
+      />
       <div className='relative mx-auto w-[calc(100%-2rem)] max-w-304 max-[850px]:w-[calc(100%-2.5rem)] max-[580px]:w-[calc(100%-2rem)]'>
         <Link
           className='inline-flex min-h-11 items-center gap-2 rounded-xl border border-slate-900/13 bg-white/75 px-4 text-sm font-semibold text-slate-700 transition hover:border-indigo-500/40 hover:text-indigo-700 focus-visible:outline-3 focus-visible:outline-offset-3 focus-visible:outline-indigo-300 dark:border-white/10 dark:bg-white/4 dark:text-slate-200 dark:hover:text-indigo-300'
@@ -29,7 +39,9 @@ export default async function ProjectDetailsPage({params}: {params: Promise<{slu
         <div className='mt-10 grid gap-12 lg:grid-cols-[minmax(0,1.1fr)_minmax(20rem,0.9fr)] lg:items-start lg:gap-16'>
           <ProjectGallery
             images={project.gallery}
-            labels={project.gallery.map(image => detail(`gallery.${image.label}`))}
+            labels={project.gallery.map(image =>
+              detail(`gallery.${image.label}`)
+            )}
           />
           <div>
             <span className='inline-flex items-center gap-2 rounded-full border border-indigo-500/25 bg-indigo-500/8 px-3 py-1.5 text-xs font-bold text-indigo-700 dark:text-indigo-300'>
@@ -70,7 +82,9 @@ export default async function ProjectDetailsPage({params}: {params: Promise<{slu
                   {detail('stackDescription')}
                 </p>
               </div>
-              <ul className='flex flex-wrap gap-2 sm:max-w-150 sm:justify-end' role='list'>
+              <ul
+                className='flex flex-wrap gap-2 sm:max-w-150 sm:justify-end'
+                role='list'>
                 {project.stack.map(item => (
                   <li
                     className='rounded-lg border border-slate-900/10 bg-white/80 px-3 py-2 font-mono text-xs font-medium text-slate-700 shadow-sm dark:border-white/10 dark:bg-slate-950/30 dark:text-slate-200'

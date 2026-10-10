@@ -3,18 +3,17 @@
 import {useState} from 'react';
 import {ArrowLeft, ArrowRight} from 'lucide-react';
 
-type GalleryItem = {
-  image: string;
-  label: string;
-};
+import type {IPortfolioProjectGalleryItem} from '@/features/portfolio/types/portfolio-project';
+
+interface IProps {
+  images: readonly IPortfolioProjectGalleryItem[];
+  labels: readonly string[];
+}
 
 export default function ProjectGallery({
   images,
   labels
-}: {
-  images: readonly GalleryItem[];
-  labels: readonly string[];
-}) {
+}: IProps) {
   const [activeIndex, setActiveIndex] = useState(0);
   const activeImage = images[activeIndex];
 

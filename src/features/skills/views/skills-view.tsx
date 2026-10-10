@@ -1,6 +1,7 @@
-import {skillGroups} from '../data/skills';
 import {getTranslations} from 'next-intl/server';
-import {Code2, Blocks, Server, Palette, GitBranch} from 'lucide-react';
+import {Blocks, Code2, GitBranch, Palette, Server} from 'lucide-react';
+
+import {skillGroups} from '@/features/skills/constants/skill-groups';
 
 const groupIcons = {
   frontend: Code2,
@@ -75,10 +76,13 @@ export default async function SkillsView() {
                 } ${key === 'frontend' || key === 'platformBackend' ? 'xl:col-span-3' : 'xl:col-span-2'}`}
                 key={key}>
                 <div className='flex items-center gap-3'>
-                  <span className={`grid size-11 place-items-center rounded-xl shadow-lg ${iconStyles[key]}`}>
+                  <span
+                    className={`grid size-11 place-items-center rounded-xl shadow-lg ${iconStyles[key]}`}>
                     <Icon aria-hidden='true' className='size-5 stroke-[1.8]' />
                   </span>
-                  <h3 className='text-lg font-bold tracking-[-0.02em]'>{t(`groups.${key}`)}</h3>
+                  <h3 className='text-lg font-bold tracking-[-0.02em]'>
+                    {t(`groups.${key}`)}
+                  </h3>
                 </div>
                 <ul className='mt-6 flex flex-wrap gap-2' role='list'>
                   {skills.map(skill => (
