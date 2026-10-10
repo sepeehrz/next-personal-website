@@ -43,5 +43,5 @@ next-env.d.ts
 # ai
 /ai
 AGENTS.md
-.agents
+/.agents
 .gapcode
