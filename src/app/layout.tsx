@@ -8,7 +8,7 @@ import {FooterComponent} from '@/components/site-footer';
 
 export const metadata: Metadata = {
   description:
-    'A full-stack software engineer building fast, thoughtful and accessible digital products.',
+    'A software engineer building fast, thoughtful and accessible digital products.',
   title: 'Sepehr Zarghami | Software Engineer'
 };
 

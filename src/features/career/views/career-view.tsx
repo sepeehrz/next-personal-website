@@ -23,6 +23,7 @@ export default async function CareerView() {
     }
   ];
   const experience = [
+    'kianPardazHooshmand',
     'lendroll',
     'gapfilm',
     'vrwebdesign',

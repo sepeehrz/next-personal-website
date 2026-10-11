@@ -42,17 +42,17 @@ export default async function SkillsView() {
       id='skills'>
       <div
         aria-hidden='true'
-        className='pointer-events-none absolute -start-32 top-10 size-128 rounded-full bg-violet-500/12 blur-3xl dark:bg-violet-500/16'
+        className='pointer-events-none absolute -inset-s-32 top-10 size-128 rounded-full bg-violet-500/12 blur-3xl dark:bg-violet-500/16'
       />
       <div
         aria-hidden='true'
-        className='pointer-events-none absolute -end-28 bottom-0 size-120 rounded-full bg-emerald-500/10 blur-3xl dark:bg-emerald-500/14'
+        className='pointer-events-none absolute -inset-e-28 bottom-0 size-120 rounded-full bg-emerald-500/10 blur-3xl dark:bg-emerald-500/14'
       />
 
       <div className='relative mx-auto w-[calc(100%-2rem)] max-w-304 max-[850px]:w-[calc(100%-2.5rem)] max-[580px]:w-[calc(100%-2rem)]'>
         <div className='max-w-165'>
           <div className='inline-flex items-center gap-2 rounded-full border border-indigo-500/25 bg-indigo-500/8 px-3 py-1.5 text-xs font-bold text-indigo-700 dark:text-indigo-300'>
-            <Blocks aria-hidden='true' className='size-4 stroke-[2]' />
+            <Blocks aria-hidden='true' className='size-4 stroke-2' />
             {t('eyebrow')}
           </div>
           <h2
@@ -71,7 +71,7 @@ export default async function SkillsView() {
 
             return (
               <article
-                className={`rounded-3xl border p-6 shadow-[0_1rem_2.5rem_rgb(15_23_42_/_6%)] transition duration-200 hover:-translate-y-1 hover:shadow-[0_1.5rem_3rem_rgb(15_23_42_/_11%)] dark:shadow-black/10 ${
+                className={`rounded-3xl border p-6 shadow-[0_1rem_2.5rem_rgb(15_23_42/6%)] transition duration-200 hover:-translate-y-1 hover:shadow-[0_1.5rem_3rem_rgb(15_23_42/11%)] dark:shadow-black/10 ${
                   cardStyles[key]
                 } ${key === 'frontend' || key === 'platformBackend' ? 'xl:col-span-3' : 'xl:col-span-2'}`}
                 key={key}>

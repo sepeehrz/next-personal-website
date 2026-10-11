@@ -9,5 +9,5 @@ export interface IPortfolioProject {
   slug: string;
   stack: readonly string[];
   tone: string;
-  website: string;
+  website?: string;
 }

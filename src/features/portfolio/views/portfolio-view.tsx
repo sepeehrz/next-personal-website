@@ -64,7 +64,7 @@ export default async function PortfolioView() {
 
         <div className='mt-12 grid gap-4 md:grid-cols-2 xl:grid-cols-3'>
           {projects.map(({slug, tone}, index) => {
-            const Icon = projectIcons[slug];
+            const Icon = projectIcons[slug as keyof typeof projectIcons];
 
             return (
             <Link
@@ -76,7 +76,7 @@ export default async function PortfolioView() {
               key={slug}>
               <div
                 aria-hidden='true'
-                className={`absolute inset-0 bg-linear-to-br opacity-90 ${toneStyles[tone]}`}
+                className={`absolute inset-0 bg-linear-to-br opacity-90 ${toneStyles[tone as keyof typeof toneStyles]}`}
               />
               <div
                 aria-hidden='true'

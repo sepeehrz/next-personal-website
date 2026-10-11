@@ -61,40 +61,32 @@ export default async function ProjectDetailsPage({
               <p className='mt-3 text-sm leading-7 text-slate-600 dark:text-slate-400'>
                 {detail(`projects.${project.slug}.description`)}
               </p>
-            </article>
-            <a
-              className='mt-6 inline-flex min-h-12 items-center gap-2 rounded-xl bg-slate-950 px-5 text-sm font-bold text-white shadow-lg shadow-slate-950/15 transition hover:bg-indigo-700 focus-visible:outline-3 focus-visible:outline-offset-3 focus-visible:outline-indigo-300 dark:bg-white dark:text-slate-950 dark:hover:bg-indigo-100'
-              href={project.website}
-              rel='noreferrer'
-              target='_blank'>
-              {detail('visitProject')}
-              <ExternalLink aria-hidden='true' className='size-4' />
-            </a>
-          </div>
-        </div>
-
-        <div className='mt-16 border-t border-slate-900/13 pt-10 dark:border-white/10'>
-          <article className='rounded-3xl border border-indigo-500/20 bg-linear-to-br from-indigo-500/8 via-white/70 to-emerald-500/8 p-6 shadow-[0_1rem_2.5rem_rgb(15_23_42_/_6%)] sm:p-8 dark:border-indigo-300/15 dark:from-indigo-400/10 dark:via-white/4 dark:to-emerald-400/8'>
-            <div className='flex flex-col gap-5 sm:flex-row sm:items-center sm:justify-between'>
-              <div>
-                <h2 className='text-xl font-bold'>{detail('stackTitle')}</h2>
-                <p className='mt-2 text-sm leading-6 text-slate-600 dark:text-slate-400'>
-                  {detail('stackDescription')}
-                </p>
+              <div className='mt-5 border-t border-slate-900/10 pt-4 dark:border-white/10'>
+                <h3 className='text-xs font-bold uppercase tracking-[0.08em] text-slate-500 dark:text-slate-400'>
+                  {detail('stackTitle')}
+                </h3>
+                <ul className='mt-3 flex flex-wrap gap-2' role='list'>
+                  {project.stack.map(item => (
+                    <li
+                      className='rounded-lg border border-indigo-500/20 bg-indigo-500/8 px-3 py-2 font-mono text-xs font-medium text-indigo-800 dark:text-indigo-200'
+                      key={item}>
+                      {item}
+                    </li>
+                  ))}
+                </ul>
               </div>
-              <ul
-                className='flex flex-wrap gap-2 sm:max-w-150 sm:justify-end'
-                role='list'>
-                {project.stack.map(item => (
-                  <li
-                    className='rounded-lg border border-slate-900/10 bg-white/80 px-3 py-2 font-mono text-xs font-medium text-slate-700 shadow-sm dark:border-white/10 dark:bg-slate-950/30 dark:text-slate-200'
-                    key={item}>
-                    {item}
-                  </li>
-                ))}
-              </ul>
-            </div>
-          </article>
+            </article>
+            {project.website ? (
+              <a
+                className='mt-6 inline-flex min-h-12 items-center gap-2 rounded-xl bg-slate-950 px-5 text-sm font-bold text-white shadow-lg shadow-slate-950/15 transition hover:bg-indigo-700 focus-visible:outline-3 focus-visible:outline-offset-3 focus-visible:outline-indigo-300 dark:bg-white dark:text-slate-950 dark:hover:bg-indigo-100'
+                href={project.website}
+                rel='noreferrer'
+                target='_blank'>
+                {detail('visitProject')}
+                <ExternalLink aria-hidden='true' className='size-4' />
+              </a>
+            ) : null}
+          </div>
         </div>
       </div>
     </section>

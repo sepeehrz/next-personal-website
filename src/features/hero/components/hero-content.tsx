@@ -1,13 +1,8 @@
 import {getTranslations} from 'next-intl/server';
-import {Braces, MapPin, ArrowUpLeft} from 'lucide-react';
+import {Braces, ArrowUpLeft} from 'lucide-react';
 
 export async function HeroContent() {
   const t = await getTranslations('Hero');
-  const stats = [
-    {label: t('stats.experience.label'), value: t('stats.experience.value')},
-    {label: t('stats.projects.label'), value: t('stats.projects.value')},
-    {label: t('stats.score.label'), value: t('stats.score.value')}
-  ];
 
   return (
     <div
@@ -37,7 +32,7 @@ export async function HeroContent() {
 
       <div className='mt-9 flex flex-wrap gap-3 max-[580px]:mt-7 max-[580px]:grid max-[580px]:grid-cols-1'>
         <a
-          className='inline-flex min-h-13 items-center justify-center gap-2.5 rounded-xl border border-transparent bg-indigo-600 px-5 py-3 text-[0.9rem] font-bold text-white shadow-[0_0.75rem_2.5rem_rgb(66_101_239_/_22%)] transition hover:-translate-y-0.5 hover:bg-indigo-500 hover:shadow-[0_0.9rem_3rem_rgb(66_101_239_/_32%)] focus-visible:outline-3 focus-visible:outline-offset-4 focus-visible:outline-indigo-300 active:scale-[0.98]'
+          className='inline-flex min-h-13 items-center justify-center gap-2.5 rounded-xl border border-transparent bg-indigo-600 px-5 py-3 text-[0.9rem] font-bold text-white shadow-[0_0.75rem_2.5rem_rgb(66_101_239/22%)] transition hover:-translate-y-0.5 hover:bg-indigo-500 hover:shadow-[0_0.9rem_3rem_rgb(66_101_239/32%)] focus-visible:outline-3 focus-visible:outline-offset-4 focus-visible:outline-indigo-300 active:scale-[0.98]'
           href='mailto:sepeehrz@gmail.com'>
           {t('primaryAction')}
           <ArrowUpLeft
@@ -51,21 +46,6 @@ export async function HeroContent() {
           {t('secondaryAction')}
         </a>
       </div>
-
-      <dl
-        className='mt-[clamp(3rem,7vh,5rem)] flex gap-[clamp(1.5rem,4vw,3.25rem)] max-[850px]:mt-14 max-[580px]:mt-12 max-[580px]:grid max-[580px]:grid-cols-3 max-[580px]:gap-3'
-        aria-label={t('stats.label')}>
-        {stats.map(stat => (
-          <div className='flex flex-col-reverse gap-[0.35rem]' key={stat.label}>
-            <dt className='text-[0.72rem] text-slate-500 max-[580px]:text-[0.58rem] max-[580px]:leading-[1.4] dark:text-slate-500'>
-              {stat.label}
-            </dt>
-            <dd className='m-0 text-[1.4rem] font-semibold tabular-nums text-slate-800 max-[580px]:text-[1.2rem] dark:text-slate-200'>
-              {stat.value}
-            </dd>
-          </div>
-        ))}
-      </dl>
     </div>
   );
 }
