@@ -12,7 +12,6 @@ export async function ProjectPreview() {
     <div
       aria-label={t('label')}
       className='relative w-full min-w-0 max-w-128 justify-self-end max-[850px]:max-w-136 max-[850px]:justify-self-center motion-safe:animate-[fade-in_760ms_100ms_cubic-bezier(0.16,1,0.3,1)_both]'
-      id='selected-work'
       role='group'>
       <div
         aria-hidden='true'
@@ -129,6 +128,7 @@ export async function ProjectPreview() {
 
       <a
         aria-label={t('emailLabel')}
+        href='mailto:sepeehrz@gmail.com'
         className='absolute -bottom-[3.3rem] -end-6 z-6 grid min-h-[4.6rem] min-w-76 grid-cols-[auto_1fr_auto] items-center gap-3 rounded-[0.95rem] border border-slate-900/20 bg-white/92 px-[0.85rem] py-[0.7rem] text-[0.78rem] font-semibold text-slate-800 shadow-[0_1.2rem_3.5rem_rgb(15_23_42_/_18%)] backdrop-blur-[14px] transition hover:-translate-y-0.5 hover:border-indigo-400/48 hover:bg-white focus-visible:outline-3 focus-visible:outline-offset-4 focus-visible:outline-indigo-300 active:scale-[0.98] max-[1100px]:-end-1 max-[580px]:-bottom-12 max-[580px]:end-[0.65rem] max-[580px]:min-w-[min(19rem,calc(100%-1.3rem))] max-[580px]:text-[0.7rem] dark:border-white/17 dark:bg-[#0e1728]/92 dark:text-slate-200 dark:shadow-[0_1.2rem_3.5rem_rgb(0_0_0_/_32%)] dark:hover:bg-[#131e35]'>
         <span
           aria-hidden='true'

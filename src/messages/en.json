@@ -22,7 +22,7 @@
       "emailLabel": "Email",
       "mobileLabel": "Mobile"
     },
-    "description": "Senior Front-End Developer with 8+ years of experience building reliable, scalable, and user-focused digital products. I specialize in turning complex business requirements into clear, intuitive experiences while maintaining high standards of performance, quality, and maintainability. I work closely with product, design, and engineering teams to deliver practical solutions, improve development processes, and create lasting value for users and businesses.",
+    "description": "Senior Software Engineer with 8+ years of experience building reliable, scalable, and user-focused digital products. I specialize in turning complex business requirements into clear, intuitive experiences while maintaining high standards of performance, quality, and maintainability. I work closely with product, design, and engineering teams to deliver practical solutions, improve development processes, and create lasting value for users and businesses.",
     "details": {
       "birthday": {
         "label": "Birthday",
@@ -42,13 +42,13 @@
     "availabilityDescription": "Available for teams and projects where thoughtful engineering can make a difference.",
     "highlightLabel": "Professional experience",
     "name": "Sepehr Zarghami",
-    "role": "Senior Frontend Developer",
+    "role": "Senior Software Engineer",
     "specialization": "Core toolkit",
     "title": "Building reliable web experiences.",
     "contactLabel": "Get in touch"
   },
   "Career": {
-    "description": "A focused path through academic foundations and hands-on frontend experience across fintech, media, e-commerce and client work.",
+    "description": "A focused path through academic foundations and hands-on software engineering experience across fintech, media, e-commerce and client work.",
     "educationEyebrow": "Academic foundation",
     "educationTitle": "Education",
     "education": {
@@ -72,37 +72,37 @@
         "company": "Cashineh",
         "description": "An e-commerce cashback platform where users shop from their favorite stores and receive part of their confirmed purchase amount back in their Cashineh account.",
         "period": "Jul 2018–Present",
-        "role": "Frontend Developer"
+        "role": "Software Engineer"
       },
       "freelancer": {
         "company": "Freelancer / Self-employed",
-        "description": "Started taking freelance projects through online platforms while building the practical foundations of programming and frontend development.",
+        "description": "Started taking freelance projects through online platforms while building the practical foundations of programming and software engineering.",
         "period": "Feb 2017–Jul 2018",
-        "role": "Frontend Developer"
+        "role": "Software Engineer"
       },
       "gapfilm": {
         "company": "Gapfilm",
         "description": "A major library of current and classic movies and series, delivered with subtitles and exclusive Gapfilm dubbing.",
         "period": "May 2021–Present",
-        "role": "Frontend Developer"
+        "role": "Software Engineer"
       },
       "lendroll": {
         "company": "Lendroll",
         "description": "A fintech platform focused on financial health and smart lending solutions, helping users manage credit, access loans and improve their financial well-being.",
         "period": "Mar 2023 – Nov 2025",
-        "role": "Senior Frontend Developer"
+        "role": "Senior Software Engineer"
       },
       "vrwebdesign": {
         "company": "Vrwebdesign",
         "description": "A programming and software team delivering personal and organizational projects across a range of technologies.",
         "period": "Aug 2019–May 2021",
-        "role": "Frontend Developer"
+        "role": "Software Engineer"
       },
       "kianPardazHooshmand": {
         "company": "Kian Pardaz Hooshmand",
         "description": "An Iranian IT and digital transformation company specializing in Microsoft CRM and Dynamics 365, web design, networking and AI-powered process automation.",
         "period": "Nov 2025 – Present",
-        "role": "Senior Frontend Developer"
+        "role": "Senior Software Engineer"
       }
     },
     "eyebrow": "Education & experience",
@@ -114,11 +114,8 @@
     "eyebrow": "Contact me",
     "title": "Let's build something meaningful.",
     "form": {
-      "description": "Your email app will open with this message prepared for sending.",
-      "emailBody": {
-        "email": "Email",
-        "name": "Name"
-      },
+      "description": "Write your message here and send it directly to me.",
+      "error": "Your message could not be sent. Please try again or email me directly.",
       "fields": {
         "email": {
           "label": "Email address",
@@ -133,11 +130,11 @@
           "placeholder": "Jane Doe"
         }
       },
-      "helper": "All fields are required. Your details stay in your email client.",
+      "helper": "All fields are required. Your message is sent through Formspree.",
       "subject": "New message from portfolio",
-      "submit": "Prepare email",
-      "submitting": "Preparing email…",
-      "success": "Your email app is opening with the message ready to send.",
+      "submit": "Send message",
+      "submitting": "Sending…",
+      "success": "Your message was sent successfully. Thank you for getting in touch.",
       "title": "Send a message",
       "validation": {
         "email": "Enter a valid email address.",
@@ -147,7 +144,7 @@
     }
   },
   "Portfolio": {
-    "description": "A selection of the products and platforms where I have contributed as a frontend developer.",
+    "description": "A selection of the products and platforms where I have contributed as a software engineer.",
     "detailHint": "Each card links to a dedicated case-study page that can be expanded next.",
     "eyebrow": "Selected work",
     "projectAriaLabel": "View details for {project}",
@@ -228,7 +225,7 @@
           "overview": "Flexible digital products shaped around the needs of each organization."
         },
         "freelance": {
-          "description": "Independent projects that helped me build strong foundations in programming, product thinking and frontend delivery across different business contexts.",
+          "description": "Independent projects that helped me build strong foundations in programming, product thinking and software delivery across different business contexts.",
           "overview": "A growing body of client work where every brief became a new learning opportunity."
         }
       }
@@ -237,9 +234,9 @@
   "Skills": {
     "eyebrow": "Technical toolkit",
     "title": "Tools I use to turn ideas into products.",
-    "description": "A practical toolkit built through frontend development, product delivery and continuous learning.",
+    "description": "A practical toolkit built through software engineering, product delivery and continuous learning.",
     "groups": {
-      "frontend": "Frontend foundations",
+      "frontend": "Software engineering foundations",
       "uiTooling": "UI & tooling",
       "stateQuality": "State, build & quality",
       "workflow": "Workflow & delivery",
@@ -250,7 +247,7 @@
     "backToTop": "Back to top",
     "connectTitle": "Connect",
     "copyright": "© 2026 Sepehr Zarghami. Built with care.",
-    "description": "Available for thoughtful frontend work, product collaborations and meaningful digital experiences.",
+    "description": "Available for thoughtful software engineering work, product collaborations and meaningful digital experiences.",
     "emailAction": "Start a conversation",
     "emailLabel": "Email Sepehr Zarghami",
     "eyebrow": "Keep in touch",

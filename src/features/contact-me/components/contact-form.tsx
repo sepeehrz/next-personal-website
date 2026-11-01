@@ -9,10 +9,13 @@ import {Send, CheckCircle2, LoaderCircle} from 'lucide-react';
 
 const controlClass =
   'mt-2 w-full rounded-xl border bg-white px-4 py-3 text-base text-slate-900 outline-none transition placeholder:text-slate-400 focus:border-indigo-500 focus:ring-4 focus:ring-indigo-500/12 disabled:cursor-not-allowed disabled:opacity-60 dark:bg-white/5 dark:text-slate-50 dark:placeholder:text-slate-500';
+const formEndpoint = 'https://formspree.io/f/mpppylae';
 
 export function ContactForm() {
   const t = useTranslations('ContactMe.form');
-  const [wasSubmitted, setWasSubmitted] = useState(false);
+  const [submitStatus, setSubmitStatus] = useState<
+    'idle' | 'success' | 'error'
+  >('idle');
   const formSchema = z.object({
     email: z.string().trim().email(t('validation.email')),
     message: z.string().trim().min(10, t('validation.message')),
@@ -21,26 +24,49 @@ export function ContactForm() {
   const {
     formState: {errors, isSubmitting},
     handleSubmit,
-    register
+    register,
+    reset
   } = useForm({
     mode: 'onBlur',
     resolver: zodResolver(formSchema)
   });
 
-  const onSubmit = handleSubmit(data => {
-    const emailUrl = new URL('mailto:sepeehrz@gmail.com');
-    emailUrl.searchParams.set('subject', `${t('subject')} — ${data.name}`);
-    emailUrl.searchParams.set(
-      'body',
-      `${t('emailBody.name')}: ${data.name}\n${t('emailBody.email')}: ${data.email}\n\n${data.message}`
-    );
+  const onSubmit = handleSubmit(async data => {
+    setSubmitStatus('idle');
 
-    setWasSubmitted(true);
-    window.location.assign(emailUrl.toString());
+    try {
+      const response = await fetch(formEndpoint, {
+        method: 'POST',
+        headers: {
+          Accept: 'application/json',
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+          ...data,
+          _subject: `${t('subject')} — ${data.name}`
+        })
+      });
+
+      if (!response.ok) {
+        setSubmitStatus('error');
+        return;
+      }
+
+      reset();
+      setSubmitStatus('success');
+    } catch {
+      setSubmitStatus('error');
+    }
   });
 
   return (
-    <form className='grid gap-5' noValidate onSubmit={onSubmit}>
+    <form
+      action={formEndpoint}
+      className='grid gap-5'
+      method='POST'
+      noValidate
+      onChange={() => setSubmitStatus('idle')}
+      onSubmit={onSubmit}>
       <div className='grid gap-5 sm:grid-cols-2'>
         <div>
           <label
@@ -53,6 +79,7 @@ export function ContactForm() {
             aria-describedby={errors.name ? 'contact-name-error' : undefined}
             aria-invalid={Boolean(errors.name)}
             autoComplete='name'
+            disabled={isSubmitting}
             className={`${controlClass} ${
               errors.name
                 ? 'border-red-500 focus:border-red-500 focus:ring-red-500/12'
@@ -83,6 +110,7 @@ export function ContactForm() {
             aria-describedby={errors.email ? 'contact-email-error' : undefined}
             aria-invalid={Boolean(errors.email)}
             autoComplete='email'
+            disabled={isSubmitting}
             className={`${controlClass} ${
               errors.email
                 ? 'border-red-500 focus:border-red-500 focus:ring-red-500/12'
@@ -115,6 +143,7 @@ export function ContactForm() {
             errors.message ? 'contact-message-error' : undefined
           }
           aria-invalid={Boolean(errors.message)}
+          disabled={isSubmitting}
           className={`${controlClass} min-h-40 resize-y ${
             errors.message
               ? 'border-red-500 focus:border-red-500 focus:ring-red-500/12'
@@ -154,7 +183,7 @@ export function ContactForm() {
         </button>
       </div>
 
-      {wasSubmitted && (
+      {submitStatus === 'success' && (
         <p
           className='flex items-center gap-2 rounded-xl border border-emerald-500/25 bg-emerald-500/8 px-4 py-3 text-sm font-medium text-emerald-800 dark:text-emerald-300'
           role='status'>
@@ -163,6 +192,13 @@ export function ContactForm() {
             className='size-5 shrink-0 stroke-[2]'
           />
           {t('success')}
+        </p>
+      )}
+      {submitStatus === 'error' && (
+        <p
+          className='rounded-xl border border-red-500/25 bg-red-500/8 px-4 py-3 text-sm font-medium text-red-700 dark:text-red-300'
+          role='alert'>
+          {t('error')}
         </p>
       )}
     </form>

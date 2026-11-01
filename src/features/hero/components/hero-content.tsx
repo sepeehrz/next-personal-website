@@ -42,7 +42,7 @@ export async function HeroContent() {
         </a>
         <a
           className='inline-flex min-h-13 items-center justify-center rounded-xl border border-slate-900/20 bg-white/72 px-5 py-3 text-[0.9rem] font-bold text-slate-700 transition hover:border-slate-900/27 hover:bg-slate-900/7 hover:text-slate-950 focus-visible:outline-3 focus-visible:outline-offset-4 focus-visible:outline-indigo-300 dark:border-white/17 dark:bg-white/3 dark:text-slate-200 dark:hover:border-white/27 dark:hover:bg-white/7 dark:hover:text-white'
-          href='#selected-work'>
+          href='#portfolio'>
           {t('secondaryAction')}
         </a>
       </div>
