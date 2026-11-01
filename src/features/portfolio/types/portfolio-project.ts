@@ -1,13 +1,11 @@
-export interface IPortfolioProjectGalleryItem {
-  image: string;
-  label: string;
-}
-
 export interface IPortfolioProject {
-  category: string;
-  gallery: readonly IPortfolioProjectGalleryItem[];
+  title: string;
+  details: string;
   slug: string;
-  stack: readonly string[];
-  tone: string;
-  website?: string;
+  link?: string;
+  images?: readonly string[];
+  tags: readonly string[];
+  stacks: readonly {name: string; icon: string}[];
+  withPreview: boolean;
+  withSlider: boolean;
 }

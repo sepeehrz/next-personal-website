@@ -1,31 +1,9 @@
 import Link from 'next/link';
 import {getTranslations} from 'next-intl/server';
-import {
-  ArrowUpLeft,
-  Building2,
-  Clapperboard,
-  Rocket,
-  ShoppingBag,
-  WalletCards
-} from 'lucide-react';
+import {ArrowUpLeft, Rocket} from 'lucide-react';
+import Image from 'next/image';
 
 import {projects} from '@/features/portfolio/constants/project-catalog';
-
-const projectIcons = {
-  cashineh: ShoppingBag,
-  freelance: Rocket,
-  gapfilm: Clapperboard,
-  lendroll: WalletCards,
-  vrwebdesign: Building2
-} as const;
-
-const toneStyles = {
-  amber: 'from-amber-500/24 via-orange-500/12 to-transparent text-amber-700 dark:text-amber-300',
-  emerald: 'from-emerald-500/24 via-cyan-500/12 to-transparent text-emerald-700 dark:text-emerald-300',
-  rose: 'from-rose-500/24 via-pink-500/12 to-transparent text-rose-700 dark:text-rose-300',
-  sky: 'from-sky-500/24 via-blue-500/12 to-transparent text-sky-700 dark:text-sky-300',
-  violet: 'from-violet-500/24 via-indigo-500/12 to-transparent text-violet-700 dark:text-violet-300'
-} as const;
 
 export default async function PortfolioView() {
   const t = await getTranslations('Portfolio');
@@ -63,51 +41,25 @@ export default async function PortfolioView() {
         </div>
 
         <div className='mt-12 grid gap-4 md:grid-cols-2 xl:grid-cols-3'>
-          {projects.map(({slug, tone}, index) => {
-            const Icon = projectIcons[slug as keyof typeof projectIcons];
-
-            return (
+          {projects.map((project, index) => (
             <Link
-              aria-label={t('projectAriaLabel', {project: t(`projects.${slug}.title`)})}
-              className={`group relative min-h-84 overflow-hidden rounded-3xl border border-slate-900/13 bg-white p-6 shadow-[0_0.75rem_2rem_rgb(15_23_42_/_7%)] transition duration-200 hover:-translate-y-1 hover:border-slate-900/20 hover:shadow-[0_1.5rem_4rem_rgb(15_23_42_/_12%)] focus-visible:outline-3 focus-visible:outline-offset-4 focus-visible:outline-indigo-300 dark:border-white/10 dark:bg-white/4 dark:hover:border-white/20 dark:hover:bg-white/7 dark:hover:shadow-[0_1.5rem_4rem_rgb(0_0_0_/_24%)] ${
-                index === 0 ? 'md:col-span-2 xl:col-span-2' : ''
-              }`}
-              href={`/projects/${slug}`}
-              key={slug}>
-              <div
-                aria-hidden='true'
-                className={`absolute inset-0 bg-linear-to-br opacity-90 ${toneStyles[tone as keyof typeof toneStyles]}`}
-              />
-              <div
-                aria-hidden='true'
-                className='absolute -end-12 -top-12 size-44 rounded-full border border-white/10 bg-white/5 transition duration-300 group-hover:scale-110'
-              />
-              <div className='relative flex h-full flex-col'>
-                <div className='flex items-start justify-between gap-4'>
-                  <span className='grid size-12 place-items-center rounded-2xl border border-white/30 bg-slate-950/90 text-slate-50 shadow-lg shadow-slate-950/15 backdrop-blur-sm'>
-                    <Icon aria-hidden='true' className='size-6 stroke-[1.8]' />
-                  </span>
-                  <span className='inline-flex size-10 items-center justify-center rounded-xl border border-slate-900/13 bg-white/70 text-slate-700 shadow-sm transition duration-200 group-hover:bg-slate-950 group-hover:text-white dark:border-white/12 dark:bg-slate-950/25 dark:text-slate-200 dark:group-hover:bg-white dark:group-hover:text-slate-950'>
-                    <ArrowUpLeft aria-hidden='true' className='size-5 stroke-[1.8]' />
-                  </span>
-                </div>
-                <div className='mt-auto pt-14'>
-                  <p className='text-xs font-bold tracking-[0.08em] text-slate-600 dark:text-slate-300'>
-                    {t(`projects.${slug}.category`)}
-                  </p>
-                  <h3 className='mt-2 text-2xl font-bold tracking-[-0.03em]'>{t(`projects.${slug}.title`)}</h3>
-                  <p className='mt-3 max-w-110 text-sm leading-6 text-slate-600 dark:text-slate-300'>
-                    {t(`projects.${slug}.summary`)}
-                  </p>
-                  <span className='mt-5 inline-flex items-center gap-2 text-sm font-bold text-slate-900 dark:text-white'>
-                    {t('viewCaseStudy')}
-                    <ArrowUpLeft aria-hidden='true' className='size-4 stroke-[1.8]' />
-                  </span>
-                </div>
+              aria-label={t('projectAriaLabel', {project: project.title})}
+              className={`group relative flex min-h-84 flex-col overflow-hidden rounded-3xl border border-slate-900/13 bg-white shadow-lg transition hover:-translate-y-1 focus-visible:outline-3 focus-visible:outline-offset-4 focus-visible:outline-indigo-300 dark:border-white/10 dark:bg-slate-900 ${index === 0 ? 'md:col-span-2 xl:col-span-2' : ''}`}
+              href={`/projects/${project.slug}`}
+              key={project.slug}>
+              <div className='relative h-48 overflow-hidden bg-linear-to-br from-indigo-900 to-emerald-800'>
+                {project.images?.[0] ? (
+                  <Image alt='' className='object-cover object-top transition duration-300 group-hover:scale-105' fill sizes='(min-width: 1280px) 40vw, (min-width: 768px) 50vw, 100vw' src={`/images/${project.images[0]}`} />
+                ) : <Rocket aria-hidden='true' className='absolute inset-0 m-auto size-12 text-white/60' />}
+              </div>
+              <div className='flex flex-1 flex-col p-6'>
+                <p className='text-xs font-bold uppercase tracking-wider text-indigo-600 dark:text-indigo-300'>{project.tags.join(' ? ')}</p>
+                <h3 className='mt-2 text-2xl font-bold'>{project.title}</h3>
+                <p className='mt-3 line-clamp-3 text-sm leading-6 text-slate-600 dark:text-slate-300'>{project.details}</p>
+                <span className='mt-auto inline-flex items-center gap-2 pt-5 text-sm font-bold'>{t('viewCaseStudy')} <ArrowUpLeft aria-hidden='true' className='size-4' /></span>
               </div>
             </Link>
-            );
-          })}
+          ))}
         </div>
       </div>
     </section>

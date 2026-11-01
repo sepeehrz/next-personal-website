@@ -145,7 +145,7 @@
   },
   "Portfolio": {
     "description": "A selection of the products and platforms where I have contributed as a software engineer.",
-    "detailHint": "Each card links to a dedicated case-study page that can be expanded next.",
+    "detailHint": "Explore each project to see its details and images.",
     "eyebrow": "Selected work",
     "projectAriaLabel": "View details for {project}",
     "title": "Projects shaped by real-world needs.",
