@@ -1,10 +1,8 @@
 'use client';
 
-import {z} from 'zod';
 import {useState} from 'react';
 import {useForm} from 'react-hook-form';
 import {useTranslations} from 'next-intl';
-import {zodResolver} from '@hookform/resolvers/zod';
 import {Send, CheckCircle2, LoaderCircle} from 'lucide-react';
 
 const controlClass =
@@ -16,19 +14,25 @@ export function ContactForm() {
   const [submitStatus, setSubmitStatus] = useState<
     'idle' | 'success' | 'error'
   >('idle');
-  const formSchema = z.object({
-    email: z.string().trim().email(t('validation.email')),
-    message: z.string().trim().min(10, t('validation.message')),
-    name: z.string().trim().min(2, t('validation.name'))
-  });
   const {
     formState: {errors, isSubmitting},
     handleSubmit,
     register,
     reset
-  } = useForm({
+  } = useForm<{email: string; message: string; name: string}>({
     mode: 'onBlur',
-    resolver: zodResolver(formSchema)
+    resolver: async (values, context, options) => {
+      const [{z}, {zodResolver}] = await Promise.all([
+        import('zod'),
+        import('@hookform/resolvers/zod')
+      ]);
+      const schema = z.object({
+        email: z.string().trim().email(t('validation.email')),
+        message: z.string().trim().min(10, t('validation.message')),
+        name: z.string().trim().min(2, t('validation.name'))
+      });
+      return zodResolver(schema)(values, context, options);
+    }
   });
 
   const onSubmit = handleSubmit(async data => {

@@ -27,7 +27,7 @@ export default async function PortfolioView() {
       <div className='relative mx-auto w-[calc(100%-2rem)] max-w-304 max-[850px]:w-[calc(100%-2.5rem)] max-[580px]:w-[calc(100%-2rem)]'>
         <div className='flex flex-col justify-between gap-8 sm:flex-row sm:items-end'>
           <div className='max-w-156'>
-            <div className='inline-flex items-center gap-2 rounded-full border border-indigo-300/20 bg-indigo-400/10 px-3 py-1.5 text-xs font-bold text-indigo-200'>
+            <div className='inline-flex items-center gap-2 rounded-full border border-indigo-300/20 bg-indigo-400/10 px-3 py-1.5 text-xs font-bold text-indigo-700 dark:text-indigo-200'>
               <Rocket aria-hidden='true' className='size-4 stroke-[2]' />
               {t('eyebrow')}
             </div>

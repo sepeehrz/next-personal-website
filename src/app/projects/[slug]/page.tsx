@@ -1,3 +1,5 @@
+import type {Metadata} from 'next';
+import {siteUrl} from '@/config/site';
 import Link from 'next/link';
 import {notFound} from 'next/navigation';
 import {getLocale, getTranslations} from 'next-intl/server';
@@ -8,6 +10,33 @@ import {
   getProjectTags,
   projectContent
 } from '@/features/portfolio/constants/project-content';
+
+export async function generateMetadata({
+  params
+}: {
+  params: Promise<{slug: string}>;
+}): Promise<Metadata> {
+  const {slug} = await params;
+  const project = projects.find(item => item.slug === slug);
+  if (!project) return {};
+  const locale = await getLocale();
+  const content = locale === 'fa' ? projectContent[project.slug] : project;
+  const description = content.details.slice(0, 160);
+  const title = content.title;
+
+  return {
+    title,
+    description,
+    ...(siteUrl ? {alternates: {canonical: `/projects/${project.slug}`}} : {}),
+    openGraph: {
+      title,
+      description,
+      type: 'website',
+      ...(siteUrl ? {url: `/projects/${project.slug}`} : {})
+    },
+    twitter: {card: 'summary', title, description}
+  };
+}
 
 export default async function ProjectDetailsPage({
   params

@@ -41,42 +41,62 @@ export async function ProjectPreview() {
           dir='ltr'
           role='img'>
           <div className={codeLineClass}>
-            <span className='select-none text-slate-400 dark:text-slate-700'>01</span>
+            <span className='select-none text-slate-400 dark:text-slate-700'>
+              01
+            </span>
             <code>
               <span className='text-violet-400'>const</span>{' '}
               <span className='text-blue-400'>developer</span> = {'{'}
             </code>
           </div>
           <div className={codeLineClass}>
-            <span className='select-none text-slate-400 dark:text-slate-700'>02</span>
+            <span className='select-none text-slate-400 dark:text-slate-700'>
+              02
+            </span>
             <code>
               &nbsp;&nbsp;focus:{' '}
-              <span className='text-emerald-400'>&quot;useful products&quot;</span>,
+              <span className='text-emerald-400'>
+                &quot;useful products&quot;
+              </span>
+              ,
             </code>
           </div>
           <div className={codeLineClass}>
-            <span className='select-none text-slate-400 dark:text-slate-700'>03</span>
+            <span className='select-none text-slate-400 dark:text-slate-700'>
+              03
+            </span>
             <code>
               &nbsp;&nbsp;craft:{' '}
-              <span className='text-emerald-400'>&quot;pixel-perfect&quot;</span>,
+              <span className='text-emerald-400'>
+                &quot;pixel-perfect&quot;
+              </span>
+              ,
             </code>
           </div>
           <div className={codeLineClass}>
-            <span className='select-none text-slate-400 dark:text-slate-700'>04</span>
+            <span className='select-none text-slate-400 dark:text-slate-700'>
+              04
+            </span>
             <code>
               &nbsp;&nbsp;curious: <span className='text-amber-400'>true</span>,
             </code>
           </div>
           <div className={codeLineClass}>
-            <span className='select-none text-slate-400 dark:text-slate-700'>05</span>
+            <span className='select-none text-slate-400 dark:text-slate-700'>
+              05
+            </span>
             <code>{'}'}</code>
           </div>
           <div className={codeLineClass}>
-            <span className='select-none text-slate-400 dark:text-slate-700'>06</span>
+            <span className='select-none text-slate-400 dark:text-slate-700'>
+              06
+            </span>
             <code>&nbsp;</code>
           </div>
           <div className={codeLineClass}>
-            <span className='select-none text-slate-400 dark:text-slate-700'>07</span>
+            <span className='select-none text-slate-400 dark:text-slate-700'>
+              07
+            </span>
             <code>
               <span className='text-violet-400'>export default</span>{' '}
               <span className='text-blue-400'>developer</span>
@@ -93,7 +113,10 @@ export async function ProjectPreview() {
               <span
                 aria-hidden='true'
                 className='grid size-[1.1rem] place-items-center rounded-full bg-emerald-400/14 text-emerald-500'>
-                <Check aria-hidden='true' className='size-[0.7rem] stroke-[3]' />
+                <Check
+                  aria-hidden='true'
+                  className='size-[0.7rem] stroke-[3]'
+                />
               </span>
               {t('shipping')}
             </strong>
@@ -101,11 +124,14 @@ export async function ProjectPreview() {
           <a
             aria-label={t('projectsLinkLabel')}
             className='inline-flex min-h-11 items-center gap-1.5 rounded-[0.6rem] text-[0.75rem] font-semibold text-indigo-500 transition hover:text-slate-950 focus-visible:outline-3 focus-visible:outline-offset-4 focus-visible:outline-indigo-300 active:scale-[0.98] max-[370px]:text-[0px] dark:text-indigo-300 dark:hover:text-white'
-            href='https://github.com/'
+            href='https://github.com/sepeehrz'
             rel='noreferrer'
             target='_blank'>
             {t('projects')}
-            <ArrowUpLeft aria-hidden='true' className='size-[0.85rem] stroke-[1.8] max-[370px]:size-4' />
+            <ArrowUpLeft
+              aria-hidden='true'
+              className='size-[0.85rem] stroke-[1.8] max-[370px]:size-4'
+            />
           </a>
         </div>
       </article>
@@ -114,7 +140,11 @@ export async function ProjectPreview() {
         <span className='text-[0.65rem] font-semibold text-slate-500 dark:text-slate-500'>
           {t('stack')}
         </span>
-        <div aria-label={t('stack')} className='mt-3 flex flex-wrap gap-1.5' dir='ltr' role='list'>
+        <div
+          aria-label={t('stack')}
+          className='mt-3 flex flex-wrap gap-1.5'
+          dir='ltr'
+          role='list'>
           {techStack.map(tech => (
             <span
               className='rounded-md border border-slate-900/13 bg-slate-900/3 px-2 py-[0.35rem] font-mono text-[0.58rem] text-slate-600 dark:border-white/10 dark:bg-white/3 dark:text-slate-300'
@@ -136,12 +166,17 @@ export async function ProjectPreview() {
           <Mail aria-hidden='true' className='size-[1.15rem] stroke-[1.8]' />
         </span>
         <span className='flex flex-col gap-1'>
-          <small className='text-[0.62rem] font-medium text-slate-500' dir='rtl'>
+          <small
+            className='text-[0.62rem] font-medium text-slate-500'
+            dir='rtl'>
             {t('conversation')}
           </small>
           <span dir='ltr'>sepeehrz@gmail.com</span>
         </span>
-        <ArrowUpLeft aria-hidden='true' className='size-[0.95rem] stroke-[1.8] text-slate-500' />
+        <ArrowUpLeft
+          aria-hidden='true'
+          className='size-[0.95rem] stroke-[1.8] text-slate-500'
+        />
       </a>
     </div>
   );

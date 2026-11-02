@@ -1,5 +1,6 @@
 import {getTranslations} from 'next-intl/server';
 import {Braces, ArrowUpLeft} from 'lucide-react';
+import {heroFont} from '@/lib/fonts/Vazirmatn/hero';
 
 export async function HeroContent() {
   const t = await getTranslations('Hero');
@@ -18,7 +19,7 @@ export async function HeroContent() {
       </div>
 
       <h1
-        className='m-0 max-w-[13ch] text-[clamp(3rem,5.8vw,5.45rem)] font-semibold leading-[1.18] tracking-[-0.04em] max-[850px]:max-w-[11ch] max-[580px]:text-[clamp(2.75rem,14vw,4rem)]'
+        className={`${heroFont.className} m-0 max-w-[13ch] text-[clamp(3rem,5.8vw,5.45rem)] font-semibold leading-[1.18] tracking-[-0.04em] max-[850px]:max-w-[11ch] max-[580px]:text-[clamp(2.75rem,14vw,4rem)]`}
         id='hero-heading'>
         {t('title')}
         <span className='bg-linear-[105deg,#86a0ff_10%,#597cf5_52%,#61ddb1_105%] bg-clip-text text-transparent'>

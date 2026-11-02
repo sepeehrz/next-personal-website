@@ -1,4 +1,4 @@
-@import "tailwindcss";
+@import 'tailwindcss';
 
 @custom-variant dark (&:where(.dark, .dark *));
 
@@ -9,7 +9,6 @@
 
   html {
     min-width: 320px;
-    scroll-behavior: smooth;
   }
 
   body {
@@ -29,5 +28,11 @@
   a {
     -webkit-tap-highlight-color: transparent;
     touch-action: manipulation;
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    scroll-behavior: smooth;
   }
 }
