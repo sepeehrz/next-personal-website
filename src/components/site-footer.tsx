@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import {getTranslations} from 'next-intl/server';
 import {FaGithub, FaLinkedinIn} from 'react-icons/fa6';
-import {ArrowUpRight, Mail, Sparkles} from 'lucide-react';
+import {Mail, Sparkles, ArrowUpRight} from 'lucide-react';
 
 export async function FooterComponent() {
   const t = await getTranslations('Footer');

@@ -178,6 +178,8 @@
       }
     },
     "details": {
+      "previousImage": "Previous image",
+      "nextImage": "Next image",
       "backToWork": "Back to selected work",
       "visitProject": "Visit project",
       "overviewTitle": "Overview",

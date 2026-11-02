@@ -1,9 +1,13 @@
 import Link from 'next/link';
 import {notFound} from 'next/navigation';
-import {getTranslations} from 'next-intl/server';
-import {projects} from '@/features/portfolio/constants/project-catalog';
+import {getLocale, getTranslations} from 'next-intl/server';
 import {Layers3, ArrowUpLeft, ExternalLink} from 'lucide-react';
+import {projects} from '@/features/portfolio/constants/project-catalog';
 import ProjectGallery from '@/features/portfolio/components/project-gallery';
+import {
+  getProjectTags,
+  projectContent
+} from '@/features/portfolio/constants/project-content';
 
 export default async function ProjectDetailsPage({
   params
@@ -16,6 +20,8 @@ export default async function ProjectDetailsPage({
   if (!project) notFound();
 
   const detail = await getTranslations('Portfolio.details');
+  const locale = await getLocale();
+  const content = locale === 'fa' ? projectContent[project.slug] : project;
 
   return (
     <section className='relative min-h-screen overflow-hidden bg-slate-50 py-20 text-slate-900 sm:py-28 dark:bg-slate-950 dark:text-slate-50'>
@@ -36,20 +42,22 @@ export default async function ProjectDetailsPage({
         </Link>
 
         <div className='mt-10 grid gap-12 lg:grid-cols-[minmax(0,1.1fr)_minmax(20rem,0.9fr)] lg:items-start lg:gap-16'>
-          <ProjectGallery images={project.images ?? []} title={project.title} />
+          <ProjectGallery images={project.images ?? []} title={content.title} />
           <div>
             <span className='inline-flex items-center gap-2 rounded-full border border-indigo-500/25 bg-indigo-500/8 px-3 py-1.5 text-xs font-bold text-indigo-700 dark:text-indigo-300'>
               <Layers3 aria-hidden='true' className='size-4' />
-              {project.tags.join(' ? ')}
+              {getProjectTags(project.tags, locale)}
             </span>
             <h1 className='mt-6 text-[clamp(2.75rem,6vw,5.5rem)] font-semibold leading-[1.05] tracking-[-0.05em]'>
-              {project.title}
+              {content.title}
             </h1>
             <article className='mt-7 rounded-3xl border border-slate-900/13 bg-white/75 p-6 shadow-[0_1rem_2.5rem_rgb(15_23_42_/_6%)] dark:border-white/10 dark:bg-white/4'>
               <h2 className='text-sm font-bold uppercase tracking-[0.08em] text-slate-500 dark:text-slate-400'>
                 {detail('overviewTitle')}
               </h2>
-              <p className='mt-3 text-base font-medium leading-8 text-slate-700 dark:text-slate-200'>{project.details}</p>
+              <p className='mt-3 text-base font-medium leading-8 text-slate-700 dark:text-slate-200'>
+                {content.details}
+              </p>
               <div className='mt-5 border-t border-slate-900/10 pt-4 dark:border-white/10'>
                 <h3 className='text-xs font-bold uppercase tracking-[0.08em] text-slate-500 dark:text-slate-400'>
                   {detail('stackTitle')}

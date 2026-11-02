@@ -1,7 +1,6 @@
 import {getTranslations} from 'next-intl/server';
-import {Blocks, Code2, GitBranch, Palette, Server} from 'lucide-react';
-
 import {skillGroups} from '@/features/skills/constants/skill-groups';
+import {Code2, Blocks, Server, Palette, GitBranch} from 'lucide-react';
 
 const groupIcons = {
   frontend: Code2,

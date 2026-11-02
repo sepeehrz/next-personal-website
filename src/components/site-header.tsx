@@ -1,10 +1,9 @@
 'use client';
 
 import {useTranslations} from 'next-intl';
-import {FaGithub, FaLinkedinIn} from 'react-icons/fa6';
-
-import {LanguageSwitcher} from './language-switcher';
 import {ThemeToggle} from './theme-toggle';
+import {LanguageSwitcher} from './language-switcher';
+import {FaGithub, FaLinkedinIn} from 'react-icons/fa6';
 
 export function HeaderComponent() {
   const t = useTranslations('Header');

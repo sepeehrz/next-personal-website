@@ -1,12 +1,15 @@
 import Link from 'next/link';
-import {getTranslations} from 'next-intl/server';
-import {ArrowUpLeft, Rocket} from 'lucide-react';
-import Image from 'next/image';
-
+import {Rocket, ArrowUpLeft} from 'lucide-react';
+import {getLocale, getTranslations} from 'next-intl/server';
 import {projects} from '@/features/portfolio/constants/project-catalog';
+import {
+  getProjectTags,
+  projectContent
+} from '@/features/portfolio/constants/project-content';
 
 export default async function PortfolioView() {
   const t = await getTranslations('Portfolio');
+  const locale = await getLocale();
 
   return (
     <section
@@ -33,7 +36,9 @@ export default async function PortfolioView() {
               id='portfolio-heading'>
               {t('title')}
             </h2>
-            <p className='mt-5 max-w-130 text-base leading-8 text-slate-600 dark:text-slate-400'>{t('description')}</p>
+            <p className='mt-5 max-w-130 text-base leading-8 text-slate-600 dark:text-slate-400'>
+              {t('description')}
+            </p>
           </div>
           <p className='max-w-70 text-sm leading-6 text-slate-600 dark:text-slate-400 sm:text-end'>
             {t('detailHint')}
@@ -41,25 +46,45 @@ export default async function PortfolioView() {
         </div>
 
         <div className='mt-12 grid gap-4 md:grid-cols-2 xl:grid-cols-3'>
-          {projects.map((project, index) => (
-            <Link
-              aria-label={t('projectAriaLabel', {project: project.title})}
-              className={`group relative flex min-h-84 flex-col overflow-hidden rounded-3xl border border-slate-900/13 bg-white shadow-lg transition hover:-translate-y-1 focus-visible:outline-3 focus-visible:outline-offset-4 focus-visible:outline-indigo-300 dark:border-white/10 dark:bg-slate-900 ${index === 0 ? 'md:col-span-2 xl:col-span-2' : ''}`}
-              href={`/projects/${project.slug}`}
-              key={project.slug}>
-              <div className='relative h-48 overflow-hidden bg-linear-to-br from-indigo-900 to-emerald-800'>
-                {project.images?.[0] ? (
-                  <Image alt='' className='object-cover object-top transition duration-300 group-hover:scale-105' fill sizes='(min-width: 1280px) 40vw, (min-width: 768px) 50vw, 100vw' src={`/images/${project.images[0]}`} />
-                ) : <Rocket aria-hidden='true' className='absolute inset-0 m-auto size-12 text-white/60' />}
-              </div>
-              <div className='flex flex-1 flex-col p-6'>
-                <p className='text-xs font-bold uppercase tracking-wider text-indigo-600 dark:text-indigo-300'>{project.tags.join(' ? ')}</p>
-                <h3 className='mt-2 text-2xl font-bold'>{project.title}</h3>
-                <p className='mt-3 line-clamp-3 text-sm leading-6 text-slate-600 dark:text-slate-300'>{project.details}</p>
-                <span className='mt-auto inline-flex items-center gap-2 pt-5 text-sm font-bold'>{t('viewCaseStudy')} <ArrowUpLeft aria-hidden='true' className='size-4' /></span>
-              </div>
-            </Link>
-          ))}
+          {projects.map((project, index) => {
+            const content =
+              locale === 'fa' ? projectContent[project.slug] : project;
+            return (
+              <Link
+                aria-label={t('projectAriaLabel', {project: content.title})}
+                className={`group relative flex min-h-84 flex-col overflow-hidden rounded-3xl border border-slate-900/13 bg-white shadow-lg transition hover:-translate-y-1 focus-visible:outline-3 focus-visible:outline-offset-4 focus-visible:outline-indigo-300 dark:border-white/10 dark:bg-slate-900 ${index === 0 ? 'md:col-span-2 xl:col-span-2' : ''}`}
+                href={`/projects/${project.slug}`}
+                key={project.slug}>
+                <div
+                  aria-hidden='true'
+                  className='relative flex h-40 items-center justify-between overflow-hidden bg-linear-to-br from-indigo-950 via-slate-900 to-emerald-900 px-7 text-white'>
+                  <div className='absolute -end-8 -top-14 size-48 rounded-full border border-white/10 bg-white/5' />
+                  <div className='absolute -bottom-20 start-1/3 size-44 rounded-full border border-white/10' />
+                  <span
+                    className='relative grid size-14 place-items-center rounded-2xl border border-white/20 bg-white/10 text-xl font-bold backdrop-blur-sm'
+                    dir='ltr'>
+                    {project.title.charAt(0).toUpperCase()}
+                  </span>
+                  <span className='relative font-mono text-5xl font-bold text-white/20'>
+                    {String(index + 1).padStart(2, '0')}
+                  </span>
+                </div>
+                <div className='flex flex-1 flex-col p-6'>
+                  <p className='text-xs font-bold uppercase tracking-wider text-indigo-600 dark:text-indigo-300'>
+                    {getProjectTags(project.tags, locale)}
+                  </p>
+                  <h3 className='mt-2 text-2xl font-bold'>{content.title}</h3>
+                  <p className='mt-3 line-clamp-3 text-sm leading-6 text-slate-600 dark:text-slate-300'>
+                    {content.details}
+                  </p>
+                  <span className='mt-auto inline-flex items-center gap-2 pt-5 text-sm font-bold'>
+                    {t('viewCaseStudy')}{' '}
+                    <ArrowUpLeft aria-hidden='true' className='size-4' />
+                  </span>
+                </div>
+              </Link>
+            );
+          })}
         </div>
       </div>
     </section>
